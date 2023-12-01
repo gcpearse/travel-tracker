@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Locations from './components/Locations';
 import Footer from './components/Footer';
+import Counter from './components/Counter';
 
 function App() {
 
@@ -88,7 +89,7 @@ function App() {
   return (
     <>
       <Header />
-      <p id="counter">Countries visited: {visitCount}/{locations.length}</p>
+      <Counter visitCount={visitCount} locations={locations} />
       <Locations locations={locations} setVisitCount={setVisitCount} />
       <Footer />
     </>
