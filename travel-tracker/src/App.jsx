@@ -5,9 +5,6 @@ import Locations from './components/Locations';
 import Footer from './components/Footer';
 
 function App() {
-  const appHeader = "Welcome to";
-  const appName = "GoMapp";
-  const welcomeMsg = "Your personal travel wishlist";
 
   const locations = [
     {
@@ -86,10 +83,11 @@ function App() {
       image: "https://images.pexels.com/photos/8181763/pexels-photo-8181763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }
   ];
+
   const [visitCount, setVisitCount] = useState(0);
   return (
     <>
-      <Header appHeader={appHeader} appName={appName} welcomeMsg={welcomeMsg} />
+      <Header />
       <p className="counter">Countries visited: {visitCount}/{locations.length}</p>
       <Locations locations={locations} setVisitCount={setVisitCount} />
       <Footer />

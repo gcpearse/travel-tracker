@@ -1,7 +1,7 @@
-const Header = ({ appHeader, appName, welcomeMsg }) => {
+const Header = () => {
   return <div id="hero">
-    <h1 id="app-header">{appHeader} <span id="app-name">{appName}</span></h1>
-    <h2 id="welcome-msg">{welcomeMsg}</h2>
+    <h1 id="app-header">Welcome to <span id="app-name">GoMapp</span></h1>
+    <h2 id="welcome-msg">Your personal travel wishlist</h2>
   </div>;
 };
 
