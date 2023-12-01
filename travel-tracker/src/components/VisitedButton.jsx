@@ -1,4 +1,4 @@
-const VisitedButton = ({ isVisited, setIsVisited, setOnWishList, setVisitCount }) => {
+const VisitedButton = ({ locations, isVisited, setIsVisited, setOnWishList, setVisitCount }) => {
 
   let visitedButtonStyle = "visited-button";
   if (isVisited) visitedButtonStyle = "green-button";
@@ -12,7 +12,7 @@ const VisitedButton = ({ isVisited, setIsVisited, setOnWishList, setVisitCount }
     });
     setVisitCount((current) => {
       if (!isVisited) {
-        if (current < 10) {
+        if (current < locations.length) {
           return current + 1;
         } else {
           return current;

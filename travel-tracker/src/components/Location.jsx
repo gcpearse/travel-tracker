@@ -2,7 +2,7 @@ import { useState } from "react";
 import VisitedButton from "./VisitedButton";
 import WishlistButton from "./WishlistButton";
 
-const Location = ({ location, setVisitCount }) => {
+const Location = ({ location, locations, setVisitCount }) => {
 
   let [isVisited, setIsVisited] = useState(false);
   let [onWishList, setOnWishList] = useState(false);
@@ -16,6 +16,7 @@ const Location = ({ location, setVisitCount }) => {
       />
       <p className="country-fact" id="country-name">{location.name}</p>
       <VisitedButton
+        locations={locations}
         isVisited={isVisited}
         setIsVisited={setIsVisited}
         setOnWishList={setOnWishList}

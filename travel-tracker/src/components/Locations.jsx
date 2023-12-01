@@ -8,6 +8,7 @@ const Locations = ({ locations, setVisitCount }) => {
           return <Location
             key={location.name}
             location={location}
+            locations={locations}
             setVisitCount={setVisitCount}
           />;
         })}
