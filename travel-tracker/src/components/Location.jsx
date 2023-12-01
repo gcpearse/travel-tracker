@@ -1,59 +1,11 @@
 import { useState } from "react";
+import VisitedButton from "./VisitedButton";
+import WishlistButton from "./WishlistButton";
 
 const Location = ({ location, setVisitCount }) => {
 
   let [isVisited, setIsVisited] = useState(false);
   let [onWishList, setOnWishList] = useState(false);
-
-  let visitedButtonStyle = "visited-button";
-  let wishlistButtonStyle = "wishlist-button";
-
-  if (isVisited) visitedButtonStyle = "green-button";
-  if (onWishList) wishlistButtonStyle = "green-button";
-
-  const handleVisitedClick = () => {
-    setIsVisited((bool) => {
-      return !bool;
-    });
-    setOnWishList(() => {
-      return false;
-    });
-    setVisitCount((current) => {
-      if (!isVisited) {
-        if (current < 10) {
-          return current + 1;
-        } else {
-          return current;
-        }
-      } else {
-        if (current > 0) {
-          return current - 1;
-        } else {
-          return current;
-        }
-      }
-    });
-  };
-
-  const handleWishlistClick = () => {
-    setOnWishList((bool) => {
-      return !bool;
-    });
-    setIsVisited(() => {
-      return false;
-    });
-    setVisitCount((current) => {
-      if (!onWishList) {
-        if (current > 0 && isVisited) {
-          return current - 1;
-        } else {
-          return current;
-        }
-      } else {
-        return current;
-      }
-    });
-  };
 
   return (
     <li className="country">
@@ -63,8 +15,19 @@ const Location = ({ location, setVisitCount }) => {
         alt="An image representing the country"
       />
       <p className="country-fact" id="country-name">{location.name}</p>
-      <button className="list-button" id={visitedButtonStyle} onClick={handleVisitedClick}>Visited</button>
-      <button className="list-button" id={wishlistButtonStyle} onClick={handleWishlistClick}>Add to wishlist</button>
+      <VisitedButton
+        isVisited={isVisited}
+        setIsVisited={setIsVisited}
+        setOnWishList={setOnWishList}
+        setVisitCount={setVisitCount}
+      />
+      <WishlistButton
+        isVisited={isVisited}
+        onWishList={onWishList}
+        setIsVisited={setIsVisited}
+        setOnWishList={setOnWishList}
+        setVisitCount={setVisitCount}
+      />
     </li>
   );
 };
