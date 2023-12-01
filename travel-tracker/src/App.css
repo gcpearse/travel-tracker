@@ -34,7 +34,7 @@
   color: #ff006e;
 }
 
-.counter {
+#counter {
   position: sticky;
   top: 5vw;
   background: #FFBE0B;
@@ -119,8 +119,9 @@ button:active {
 .back-to-top-button {
   position: sticky;
   bottom: 0;
-  border: 2px ridge gray;
+  border: none;
   border-radius: 20px 20px 0 0;
+  box-shadow: 0 0 20px 2px hsl(0, 20%, 82%);
   background: #ff006e;
   height: 3.5em;
   width: 9em;

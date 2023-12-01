@@ -88,7 +88,7 @@ function App() {
   return (
     <>
       <Header />
-      <p className="counter">Countries visited: {visitCount}/{locations.length}</p>
+      <p id="counter">Countries visited: {visitCount}/{locations.length}</p>
       <Locations locations={locations} setVisitCount={setVisitCount} />
       <Footer />
     </>
