@@ -117,8 +117,11 @@ button:active {
 }
 
 .back-to-top-button {
-  position: sticky;
+  position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
   border: none;
   border-radius: 20px 20px 0 0;
   box-shadow: 0 0 20px 2px hsl(0, 20%, 82%);
