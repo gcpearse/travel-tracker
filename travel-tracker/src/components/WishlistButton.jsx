@@ -1,8 +1,5 @@
 const WishlistButton = ({ isVisited, onWishList, setIsVisited, setOnWishList, setVisitCount }) => {
 
-  let wishlistButtonStyle = "wishlist-button";
-  if (onWishList) wishlistButtonStyle = "green-button";
-
   const handleWishlistClick = () => {
     setOnWishList((bool) => {
       return !bool;
@@ -24,7 +21,15 @@ const WishlistButton = ({ isVisited, onWishList, setIsVisited, setOnWishList, se
   };
 
   return (
-    <button className="list-button" id={wishlistButtonStyle} onClick={handleWishlistClick}>Add to wishlist</button>
+    <button
+    className={!onWishList ? (
+      "list-button wishlist-button"
+    ) : (
+      "list-button wishlist-button green-button"
+    )}
+      onClick={handleWishlistClick}>
+      Add to wishlist
+    </button>
   );
 };
 

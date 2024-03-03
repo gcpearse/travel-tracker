@@ -1,8 +1,5 @@
 const VisitedButton = ({ locations, isVisited, setIsVisited, setOnWishList, setVisitCount }) => {
 
-  let visitedButtonStyle = "visited-button";
-  if (isVisited) visitedButtonStyle = "green-button";
-
   const handleClick = () => {
     setIsVisited((bool) => {
       return !bool;
@@ -28,7 +25,15 @@ const VisitedButton = ({ locations, isVisited, setIsVisited, setOnWishList, setV
   };
 
   return (
-    <button className="list-button" id={visitedButtonStyle} onClick={handleClick}>Visited</button>
+    <button
+      className={!isVisited ? (
+        "list-button visited-button"
+      ) : (
+        "list-button visited-button green-button"
+      )}
+      onClick={handleClick}>
+      Visited
+    </button>
   );
 };
 
