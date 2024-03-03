@@ -4,17 +4,16 @@ import WishlistButton from "./WishlistButton";
 
 const Location = ({ location, locations, setVisitCount }) => {
 
-  let [isVisited, setIsVisited] = useState(false);
-  let [onWishList, setOnWishList] = useState(false);
+  const [isVisited, setIsVisited] = useState(false);
+  const [onWishList, setOnWishList] = useState(false);
 
   return (
-    <li className="country">
+    <li>
       <img
-        className="image"
         src={location.image}
-        alt="An image representing the country"
+        alt={`An photograph of a location in ${location.name}`}
       />
-      <p className="country-fact" id="country-name">{location.name}</p>
+      <h3>{location.name}</h3>
       <VisitedButton
         locations={locations}
         isVisited={isVisited}
