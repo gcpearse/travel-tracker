@@ -91,22 +91,21 @@ button:active {
   margin: auto auto 0.1em;
   padding: 0.2em 0.4em;
   width: 10em;
+  background: #FFBE0B;
   font-weight: 500;
 }
 
-#visited-button {
+.visited-button {
   grid-column: 1;
   grid-row: 4;
-  background: #FFBE0B;
 }
 
-#wishlist-button {
+.wishlist-button {
   grid-column: 2;
   grid-row: 4;
-  background: #FFBE0B;
 }
 
-#green-button {
+.green-button {
   background: #0BFF44;
 }
 
