@@ -14,20 +14,22 @@ const Location = ({ location, locations, setVisitCount }) => {
         alt={`An photograph of a location in ${location.name}`}
       />
       <h3>{location.name}</h3>
-      <VisitedButton
-        locations={locations}
-        isVisited={isVisited}
-        setIsVisited={setIsVisited}
-        setOnWishList={setOnWishList}
-        setVisitCount={setVisitCount}
-      />
-      <WishlistButton
-        isVisited={isVisited}
-        onWishList={onWishList}
-        setIsVisited={setIsVisited}
-        setOnWishList={setOnWishList}
-        setVisitCount={setVisitCount}
-      />
+      <div id="buttons-wrapper">
+        <VisitedButton
+          locations={locations}
+          isVisited={isVisited}
+          setIsVisited={setIsVisited}
+          setOnWishList={setOnWishList}
+          setVisitCount={setVisitCount}
+        />
+        <WishlistButton
+          isVisited={isVisited}
+          onWishList={onWishList}
+          setIsVisited={setIsVisited}
+          setOnWishList={setOnWishList}
+          setVisitCount={setVisitCount}
+        />
+      </div>
     </li>
   );
 };
